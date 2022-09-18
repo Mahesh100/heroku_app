@@ -1,6 +1,9 @@
 from flask import Flask, render_template, url_for, request
+import os
 
 app = Flask(__name__)
+
+port = int(os.environ.get('PORT', 5000))
 
 @app.route('/',methods=['POST', 'GET'])
 def home():
